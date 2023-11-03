@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* global styles */
+:root {
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  background: rgb(175, 103, 233);
+  background: linear-gradient(177deg, rgba(175, 103, 233, 1) 0%, rgba(101, 101, 231, 1) 100%);
+  padding: 130px 0px;
+}
+
+.container .app {
+  width: 925px;
+  margin: 0 auto;
+  display: flex;
+  min-height: 510px;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0px 15px 15px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container .app .box {
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.container .app .left {
+  width: 475px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-height: 510px;
+  align-items: flex-start;
+}
+
+.container .app .left .woman {
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.container .app .woman-mobile {
+  display: none;
+}
+
+.container .app .left .pattern {
+  position: absolute;
+  top: 35%;
+  left: -20%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.container .app .pattern-mobile {
+  display: none;
+}
+
+.container .app .right {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  align-self: flex-start;
+  width: 450px;
+}
+
+.container .app .right h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.accordion {
+  list-style-type: none;
+  padding: 0;
+}
+
+.accordion-input {
+  display: none;
+}
+
+.accordion-header {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.accordion-header .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+}
+
+.accordion-header .title h2 {
+  color: var(--very-dark-grayish-blue);
+  font-weight: 400;
+  font-size: 14px;
+  transition: color .3s ease-in-out;
+}
+
+.accordion-header .title h2:hover {
+  color: var(--soft-red);
+}
+
+
+.accordion-content {
+  display: none;
+  padding: 10px 30px 0px 0px;
+
+}
+
+.accordion-content p {
+  color: var(--dark-grayish-blue);
+}
+
+.accordion-input:checked+.accordion-header .accordion-content {
+  display: block;
+}
+
+.accordion-input:checked+.accordion-header .title h2 {
+  font-weight: 700;
+}
+
+.accordion-input:checked+.accordion-header .title h2:hover {
+  color: var(--very-dark-grayish-blue);
+}
+
+.accordion li {
+  width: 350px;
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+
+.accordion-header .title svg {
+  transition: transform 0.3s ease;
+}
+
+.accordion-input:checked+.accordion-header .title svg {
+  transform: rotate(180deg);
+}
+
+.attribution {
+  margin: 20px auto;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  font-size: 11px;
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 40% 0px 85px;
+  }
+
+  .container .app {
+    width: 95%;
+    flex-direction: column;
+    overflow: visible;
+    min-height: 535px;
+  }
+
+  .container .app .left {
+    width: 100%;
+    min-height: 0;
+    /* height: 100px; */
+    position: relative;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .app .box {
+    display: none;
+  }
+
+  .container .app .left .woman {
+    display: none;
+  }
+
+  .container .app .left .woman-mobile {
+    display: block;
+    width: 80%;
+    transform: translate(-0%, -0%);
+    z-index: 4;
+    height: 100%;
+    margin-top: -35%;
+  }
+
+  .container .app .left .pattern {
+    display: none;
+  }
+
+  .container .app .left .pattern-mobile {
+    display: block;
+    width: 80%;
+    transform: translate(-0%, -0%);
+    z-index: 3;
+    margin-top: -25%;
+  }
+
+  .container .app .right {
+    padding: 30px 30px 70px 30px;
+    width: 100%;
+  }
+
+  .container .app .right h1 {
+    text-align: center;
+  }
+
+  .accordion li {
+    width: 100%;
+  }
+}
